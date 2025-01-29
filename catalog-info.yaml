@@ -3,7 +3,7 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: taps-saas-namespace
-  title: TAPS SaaS Project Workspace
+  title: TAPS SaaS Project Namespace
   description: prepares a new workspace including ArgoCD project + deployment, Kubernetes namespaces
 spec:
   owner: backstage/techdocs-core
