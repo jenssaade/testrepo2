@@ -116,11 +116,13 @@ spec:
 
     - id: publish
       name: Publish
-      action: publish:github
+      action:  github:repo:push
+      #action: publish:github
       input:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+        repoVisibility: private
 
     - id: register
       name: Register
