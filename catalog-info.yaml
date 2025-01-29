@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: taps-saas-namespace
+  name: taps-saas-namespaced
   title: TAPS SaaS Project Namespace
   description: prepares a new workspace including ArgoCD project + deployment, Kubernetes namespaces
 spec:
