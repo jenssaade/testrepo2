@@ -2,8 +2,8 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{values.name}}
-  namespace: external-systems
-  description: Workspace
+  namespace: platformspec
+  description: Developer Workspace
 spec:
   type: service
   lifecycle: experimental
