@@ -1,10 +1,9 @@
----
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: taps-saas-namespaced
-  title: Developer Project Workspace
+  name: taps-saas-namespace
+  title: TAPS SaaS Project Workspace
   description: prepares a new workspace including ArgoCD project + deployment, Kubernetes namespaces
 spec:
   owner: backstage/techdocs-core
@@ -102,27 +101,21 @@ spec:
         url: ./content
         values:
           name: ${{ parameters.name }}
-          description: test
-          namespace: unstable
-          region: ${{ parameters.region }}
-          customer: ${{ parameters.customer }}
 
-    #- id: fetch-docs
-    #  name: Fetch Docs
-    #  action: fetch:plain
-    #  input:
-    #    targetPath: ./community
-    #    url: https://github.com/backstage/community/tree/main/backstage-community-sessions
+    - id: fetch-docs
+      name: Fetch Docs
+      action: fetch:plain
+      input:
+        targetPath: ./community
+        url: https://github.com/backstage/community/tree/main/backstage-community-sessions
 
     - id: publish
       name: Publish
-      action:  github:repo:push
-      #action: publish:github
+      action: publish:github
       input:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-        repoVisibility: private
 
     - id: register
       name: Register
